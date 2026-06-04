@@ -56,7 +56,7 @@ class ProductController extends Controller
     {
        $produk = Products::where('name', $name)->first();
        if(!$produk){
-        return response()->json([
+        return response()->json([ 
             'Status' => 'Gagal mencari produk',
             'Pesan' => 'Produk tidak ditemukan'
         ]);
@@ -84,7 +84,6 @@ class ProductController extends Controller
     $produk->update([
         $produk->name = $request->name,
         $produk->price = $request->price,
-        $produk->stock = $request->stock,
     ]);
 
     $produk = Products::with('category')->find($produk->id);
