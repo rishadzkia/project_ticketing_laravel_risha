@@ -74,7 +74,7 @@ class ProductController extends Controller
     public function update(Request $request, string $id)
     {
        $produk = Products::find($id);
-       if(!$produk){
+       if(!$produk){ 
         return response()->json([
             'Status' => 'Gagal mengupdate produk',
             'Pesan' => 'Produk tidak ditemukan'
